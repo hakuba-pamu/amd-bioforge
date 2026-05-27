@@ -1,0 +1,21 @@
+# Docking Configuration
+
+docking:
+  exhaustiveness: 8
+  num_poses: 10
+  score_only: false
+
+receptor:
+  prepare: true
+  remove_water: true
+  add_hydrogens: true
+
+ligand:
+  format: sdf
+  minimize: true
+  generate_conformers: true
+
+scoring:
+  model: bioforge-v1
+  grid_size: 48
+  resolution: 0.5
