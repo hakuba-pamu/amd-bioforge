@@ -1,0 +1,25 @@
+# Core
+torch>=2.3.0+rocm6.1
+numpy>=1.26.0,<2.0  # breakage with mdanalysis on np2
+scipy>=1.12.0
+
+# Molecular
+mdanalysis>=2.7.0
+mdtraj>=1.9.9
+biopython>=1.84.0
+
+# ML
+scikit-learn>=1.4.0
+einops>=0.8.0
+
+# Visualization
+matplotlib>=3.8.0
+plotly>=5.20.0
+py3Dmol>=2.1.0
+
+# CLI / Config
+rich>=13.8.0
+pyyaml>=6.0
+
+# Dev
+pytest>=8.2.0

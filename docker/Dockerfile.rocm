@@ -1,0 +1,18 @@
+# AMD-BioForge -- Docker image for AMD GPUs
+FROM rocm/pytorch:rocm6.1_ubuntu22.04_py3.10_pytorch_2.3.0
+
+LABEL maintainer="Indie Developer"
+LABEL description="GPU-Accelerated Protein Folding & Drug Discovery for AMD GPUs"
+
+RUN apt-get update && apt-get install -y \
+    libopenblas-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt /tmp/
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
+
+WORKDIR /app
+COPY . .
+RUN pip install -e .
+
+CMD ["python", "scripts/bench_folding.py"]
