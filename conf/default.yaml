@@ -1,0 +1,24 @@
+# AMD-BioForge -- Default Configuration
+
+simulation:
+  forcefield: amber14sb
+  ensemble: nvt
+  temperature: 310.0    # K (body temperature)
+  pressure: 1.0         # bar
+  timestep: 0.002       # ps (2 fs)
+  cutoff: 10.0          # Angstrom
+
+equilibration:
+  steps: 50000
+  velocity_rescaling: true
+  rescale_interval: 1000
+
+production:
+  duration_ns: 100.0
+  save_interval: 1000   # steps
+  trajectory_interval: 10  # save every N logs
+
+output:
+  directory: ./trajectory
+  save_trajectory: true
+  save_energies: true
